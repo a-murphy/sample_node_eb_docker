@@ -7,8 +7,8 @@ build:
   post_ci:
       # Pushing to 2 different registries
       # DockerHub
-      - docker build -t="amurphy/sample_node_eb_docker:$BRANCH.$BUILD_NUMBER" .
-      - docker push amurphy/sample_node_eb_docker:$BRANCH.$BUILD_NUMBER
+      - docker build -t="amurphy/sample_node_eb_docker:$BUILD_NUMBER" .
+      - docker push amurphy/sample_node_eb_docker:$BUILD_NUMBER
       # ECR
       #- docker tag amurphy/sample_node_eb_docker:$BRANCH.$BUILD_NUMBER 480971114143.dkr.ecr.us-east-1.amazonaws.com/sample_node_eb_docker:$BRANCH.$BUILD_NUMBER
       #- docker push 480971114143.dkr.ecr.us-east-1.amazonaws.com/sample_node_eb_docker:$BRANCH.$BUILD_NUMBER
@@ -24,7 +24,7 @@ integrations:
       bucket_name: "elasticbeanstalk-us-west-2-544102397216"
       region: "us-west-2"
       image_name: "amurphy/sample_node_eb_docker"
-      image_tag: "$BRANCH.$BUILD_NUMBER"
+      image_tag: "$BUILD_NUMBER"
 
     # Private Image (ECR)
     #- integrationName: "aws-test"
