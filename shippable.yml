@@ -20,7 +20,7 @@ integrations:
       type: aws
       target: eb_docker
       application_name: "sample-node-eb-docker-app"
-      env_name: "docker-env-2"
+      env_name: "docker-env-3"
       bucket_name: "elasticbeanstalk-us-west-2-544102397216"
       region: "us-west-2"
       image_name: "amurphy/sample_node_eb_docker"
